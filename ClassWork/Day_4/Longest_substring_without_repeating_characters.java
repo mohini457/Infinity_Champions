@@ -4,7 +4,7 @@ import java.util.Set;
 public class Longest_substring_without_repeating_characters {
 
     public static void main(String[] args) {
-        String s="bbbb";
+        String s="";
         System.out.println(lengthOfLongestSubstring(s));
     }
 
