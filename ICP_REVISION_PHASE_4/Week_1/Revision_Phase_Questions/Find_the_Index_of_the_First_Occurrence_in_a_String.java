@@ -10,7 +10,7 @@ public class Find_the_Index_of_the_First_Occurrence_in_a_String {
 
     public static int bruteforce(String haystack, String needle){
         for(int i=0;i<haystack.length();i++){
-            for(int )
+            for(int  )
         }
     }
     
