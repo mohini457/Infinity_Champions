@@ -4,9 +4,8 @@ public class Find_Missing_Positive {
     public static void main(String[] args) {
         // int arr[]={3,4,-1,1};
         int arr[]={7,8,9,11,12};
-        // System.out.println(findMissingPositive(arr));
         System.out.println(bruteforce(arr));
-       
+       // System.out.println(findMissingPositive(arr));
     }
 
     
@@ -32,20 +31,24 @@ public class Find_Missing_Positive {
 
     // -----------------------------------------------------------------------------
 
+    //Optimal Approach
+    // In this approach we will place each number at its correct index (number 1 at index 0,and so on) and then 
+    // we will traverse the array and check for the first index where the number is not equal to index+1 and return index+1
+
 
     public static int findMissingPositive(int nums[]){
         int n=nums.length;
         for(int i=0;i<n;i++){
-            while(nums[i]>0 && nums[i]<n && nums[nums[i]-1]!=nums[i]){
-                swap(nums, i, nums[i]-1);
+            while(nums[i]>0 && nums[i]<n && nums[nums[i]-1]!=nums[i]){ // place nums[i] at its correct index
+                swap(nums, i, nums[i]-1); // swaping 
             }
         }
-        for(int i=0;i<n;i++){
-            if(nums[i]!=i+1) return i+1;
+        for(int i=0;i<n;i++){ // traversing the array
+            if(nums[i]!=i+1) return i+1; 
         }
-        return n+1;
+        return n+1;  
     }
-    public static void swap(int nums[], int i, int j){
+    public static void swap(int nums[], int i, int j){ // swap function
         int temp=nums[i];
         nums[i]=nums[j];
         nums[j]=temp;
