@@ -18,19 +18,35 @@ public class Delete_mid_of_a_stack {
             System.out.print(p + " ");
         }
     }
-    public static void deleteMid(Stack<Integer> s) {
-        // code here
+
+    public static void deleteMid(Stack<Integer> s){
+        Stack<Integer> temp=new Stack<>();
         int n=s.size();
-        Stack<Integer> st1=new Stack<>();
-        int c=0;
-        while(c<n/2){
-            int a=s.pop();
-            st1.push(a);
-            c++;
+        for (int i=0;i<n;i++){
+            if(i==n/2){
+                s.pop();
+            }
+            else{
+                temp.push(s.pop());
+            }
         }
-        s.pop();
-        while(!st1.isEmpty()){
-            s.push(st1.pop());
+        while(!temp.isEmpty()){
+            s.push(temp.pop());
         }
     }
+    // public static void deleteMid(Stack<Integer> s) {
+    //     // code here
+    //     int n=s.size();
+    //     Stack<Integer> st1=new Stack<>();
+    //     int c=0;
+    //     while(c<n/2){
+    //         int a=s.pop();
+    //         st1.push(a);
+    //         c++;
+    //     }
+    //     s.pop();
+    //     while(!st1.isEmpty()){
+    //         s.push(st1.pop());
+    //     }
+    // }
 }
