@@ -14,15 +14,20 @@ public class Stack_Implementation {
         push(stack, 10);
         push(stack, 20);
         push(stack,30);
-        System.out.println(pop(stack));
-        System.out.println(peek(stack));
+        System.out.println(pop(stack)); // pop the top elements
+        System.out.println(peek(stack)); // peek the top element
 
-        // Printing the entire stack
+        display(stack); // display the stack elements
+    }
+    
+    // display stack elements
+    public static void display(int stack[]){ 
         for(int i=top;i>=0;i--){
             System.out.println(stack[i]);
         }
     }
 
+    // push operation
     public static void push(int stack[],int value){
         if(top==stack.length-1){
             System.out.println("Stack Overflow");
@@ -31,6 +36,7 @@ public class Stack_Implementation {
         stack[++top]=value;
     }
 
+    // pop operation
     public static int pop(int stack[]){
         if(top==-1){
             System.out.println("Stack Underflow");
@@ -38,6 +44,8 @@ public class Stack_Implementation {
         }
         return stack[top--];
     }
+
+    // peek operation
     public static int peek(int stack[]){
         if(top==-1){
             System.out.println("Stack is empty");
