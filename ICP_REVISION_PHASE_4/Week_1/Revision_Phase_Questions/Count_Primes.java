@@ -9,6 +9,10 @@ public class Count_Primes {
         System.out.println(CountPrime(n));
     }
 
+    // --------------------Brute Force approach--------------------------
+
+    // In this approach we 
+
     public static int bruteforce(int n){
         int count=0;
         for(int i=2;i<n;i++){
