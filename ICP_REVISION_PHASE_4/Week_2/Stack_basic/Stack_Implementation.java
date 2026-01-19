@@ -18,6 +18,7 @@ public class Stack_Implementation {
         System.out.println(peek(stack)); // peek the top element
 
         display(stack); // display the stack elements
+        sc.close();
     }
     
     // display stack elements
